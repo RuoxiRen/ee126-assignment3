@@ -61,9 +61,9 @@ begin
 			imemBytes(35) <= X"00";
 			first := false;
 		end if;
-		addr:to_integer(unsigned(Address));
+		addr:=to_integer(unsigned(Address));
 		if (addr+3 < NUM_BYTES) then
-			ReadData <=imemBytes(addr)&(addr+1)&(addr+2)&(addr+3);
+			ReadData <=imemBytes(addr)&imemBytes(addr+1)&imemBytes(addr+2)&imemBytes(addr+3);
 		else report "Invalid address!" severity error;
 		end if;
 	end process;

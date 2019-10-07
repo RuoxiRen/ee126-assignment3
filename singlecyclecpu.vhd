@@ -18,7 +18,6 @@ port(clk :in STD_LOGIC;
 end SingleCycleCPU;
 
 architecture SingleCycleCPU_arch of SingleCycleCPU is
-
 component PC is 
 port(
      clk          : in  STD_LOGIC; -- Propogate AddressIn to AddressOut on rising edge of clock
@@ -212,7 +211,7 @@ signal Writedata , ReadData1 , ReadData2 : STD_LOGIC_VECTOR(31 downto 0);
 signal ALURes , ALUb: STD_LOGIC_VECTOR(31 downto 0);
 signal ALUzero , ALUoverflow : STD_LOGIC;
 signal MEMRData : STD_LOGIC_VECTOR(31 downto 0);
-signal BranchAddr , IAddr0: STD_LOGIC_VECTOR(31 downto 0);
+signal IAddr0: STD_LOGIC_VECTOR(31 downto 0);
 signal BranchSig : STD_LOGIC;
 
 
@@ -221,7 +220,7 @@ signal BranchSig : STD_LOGIC;
 signal tmpReg , savedReg : STD_LOGIC_VECTOR(32*4-1 downto 0);
 signal MEMContents: STD_LOGIC_VECTOR(32*4-1 downto 0);
 
-
+begin
 U0: PC port map(clk,PCenSt,rst,PCin,PCout);
 U1: IMEM port map(PCout,Instruction);
 U2: MUX5 port map(Instruction(20 downto 16),Instruction(15 downto 11),RegDst,WriteReg);
