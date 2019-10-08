@@ -21,7 +21,7 @@ architecture SingleCycleCPU_arch of SingleCycleCPU is
 component PC is 
 port(
      clk          : in  STD_LOGIC; -- Propogate AddressIn to AddressOut on rising edge of clock
-     write_enable : in  STD_LOGIC; -- Only write if '1'
+     write_enable : in  STD_LOGIC:='1'; -- Only write if '1'
      rst          : in  STD_LOGIC; -- Asynchronous reset! Sets AddressOut to 0x0
      AddressIn    : in  STD_LOGIC_VECTOR(31 downto 0); -- Next PC address
      AddressOut   : out STD_LOGIC_VECTOR(31 downto 0) -- Current PC address
@@ -242,7 +242,7 @@ U17: AND2 port map(Branch,ALUzero,BranchSig);
 
 
 
-DEBUG_PC <= PCin;
+DEBUG_PC <= PCout;
 PCenSt <='1';
 DEBUG_INSTRUCTION <= Instruction;
 DEBUG_TMP_REGS <= tmpReg;

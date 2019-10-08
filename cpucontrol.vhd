@@ -35,7 +35,7 @@ begin
 				MemWrite <= '0';
 				ALUSrc <= '0';
 				RegWrite <= '1';
-				Jump <= 'X';
+				Jump <= '0';
 				ALUOp <= "10";
 			when "100011" => -- lw
 				RegDst <= '0';
@@ -45,7 +45,7 @@ begin
 				MemWrite <= '0';
 				ALUSrc <= '1';
 				RegWrite <= '1';
-				Jump <= 'X';
+				Jump <= '0';
 				ALUOp <= "00";
 			when "101011" => -- sw
 				RegDst <= 'X';
@@ -55,7 +55,7 @@ begin
 				MemWrite <= '1';
 				ALUSrc <= '1';
 				RegWrite <= '0';
-				Jump <= 'X';
+				Jump <= '0';
 				ALUOp <= "00";
 			when "000100" => -- beq
 				RegDst <= 'X';
@@ -65,7 +65,7 @@ begin
 				MemWrite <= '0';
 				ALUSrc <= '0';
 				RegWrite <= '0';
-				Jump <= 'X';
+				Jump <= '0';
 				ALUOp <= "01";
 			when "000010" => -- jump
 				RegDst <= 'X';

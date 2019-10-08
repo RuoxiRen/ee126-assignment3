@@ -12,7 +12,7 @@ port(
      a         : in     STD_LOGIC_VECTOR(31 downto 0);
      b         : in     STD_LOGIC_VECTOR(31 downto 0);
      operation : in     STD_LOGIC_VECTOR(3 downto 0);
-     result    : buffer STD_LOGIC_VECTOR(31 downto 0);
+     result    : buffer STD_LOGIC_VECTOR(31 downto 0):=X"00000000";
      zero      : buffer STD_LOGIC;
      overflow  : buffer STD_LOGIC
 );

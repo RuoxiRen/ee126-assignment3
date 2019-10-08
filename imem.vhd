@@ -18,7 +18,7 @@ architecture imem_behaviour of IMEM is
 type ByteArray is array (0 to NUM_BYTES) of STD_LOGIC_VECTOR(7 downto 0);
 signal imemBytes : ByteArray;
 begin
-	process
+	process(Address)
 	variable first:boolean := true;
 	variable addr:integer;
 	begin
@@ -40,7 +40,7 @@ begin
 			imemBytes(14) <= X"40";
 			imemBytes(15) <= X"20";
 			imemBytes(16) <= X"08";
-			imemBytes(17) <= X"10";
+			imemBytes(17) <= X"00";
 			imemBytes(18) <= X"00";
 			imemBytes(19) <= X"01";
 			imemBytes(20) <= X"02";
